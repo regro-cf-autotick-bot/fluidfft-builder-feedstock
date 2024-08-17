@@ -1,5 +1,5 @@
 {% set name = "fluidfft-builder" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fluidfft_builder-{{ version }}.tar.gz
-  sha256: ba991aeda1f239f799c6d4c55e6b57f36d3e72fbd8c717e54760ff9c8ddb6b6f
+  sha256: c0af9ceca27ae3a00ccf2f160703be9e394d8b886b8a02653b6c0a12a4f54a90
 
 build:
   entry_points:
