@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fluidfft_builder-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fluidfft_builder-{{ version }}.tar.gz
   sha256: c0af9ceca27ae3a00ccf2f160703be9e394d8b886b8a02653b6c0a12a4f54a90
 
 build:
@@ -16,15 +16,15 @@ build:
     - fluidfft-builder-print-include-dir-cython = fluidfft_builder:print_include_dir_cython
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -37,6 +37,7 @@ test:
     - fluidfft-builder-print-include-dir-cython
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Fluidfft plugin dependencies
